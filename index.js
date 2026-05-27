@@ -31,10 +31,21 @@ topMenuEL.classList.add("flex-around");
 // Part 3: Adding Menu Buttons
 // Menu data structure
 let menuLinks = [
-  { text: 'about', href: '/about' },
-  { text: 'catalog', href: '/catalog' },
-  { text: 'orders', href: '/orders' },
-  { text: 'account', href: '/account' },
+  {text: 'about', href: '/about'},
+  {text: 'catalog', href: '#', subLinks: [
+    {text: 'all', href: '/catalog/all'},
+    {text: 'top selling', href: '/catalog/top'},
+    {text: 'search', href: '/catalog/search'},
+  ]},
+  {text: 'orders', href: '#' , subLinks: [
+    {text: 'new', href: '/orders/new'},
+    {text: 'pending', href: '/orders/pending'},
+    {text: 'history', href: '/orders/history'},
+  ]},
+  {text: 'account', href: '#', subLinks: [
+    {text: 'profile', href: '/account/profile'},
+    {text: 'sign out', href: '/account/signout'},
+  ]},
 ];
 //Iterate over the entire menuLinks array and for each "link" object:
 for (const mL of menuLinks){
@@ -61,3 +72,14 @@ In order to continue with this project, we must first explore how to add user in
 
 Remember to submit the link to this part of the project to Canvas using the submission instructions at the beginning of this document.
 */
+
+// DOM Manipulation (Part Two)
+
+const subMenuEl = document.getElementById("sub-menu");
+subMenuEl.style.height = "100%";
+subMenuEl.style.background = "var(--sub-menu-bg";
+subMenuEl.classList.add("flex-around");
+subMenuEl.style.position = "absolute";
+subMenuEl.style.top = "0";
+
+
