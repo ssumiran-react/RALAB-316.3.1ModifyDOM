@@ -105,7 +105,7 @@ topMenuEL.addEventListener("click", (e) => {
   topMenuEL.querySelectorAll('a').forEach(a => a.classList.remove('active'));
 
   //toggle link 'active'
-  
+
   if (!e.target.classList.contains('active')) {
     e.target.classList.add('active');
   } else {
@@ -113,14 +113,14 @@ topMenuEL.addEventListener("click", (e) => {
   }
 
   // Find the corresponding link object
-      const linkObj = menuLinks.find(link => link.text === e.target.textContent);
-
-      // Check if it has subLinks
-      if (linkObj && linkObj.subLinks) {
-        subMenuEl.style.top = '100%'; // Show submenu
-      } else {
-        subMenuEl.style.top = '0'; // Hide submenu
-      }
+  const linkObj = menuLinks.find(link => link.text === e.target.textContent);
+  //console.log(linkObj.subLinks);
+  // Check if it has subLinks
+  if (linkObj.subLinks) {
+    subMenuEl.style.top = '100%'; // Show submenu
+  } else {
+    subMenuEl.style.top = '0'; // Hide submenu
+  }
 
 })
 //console.log(topMenuLinks);
